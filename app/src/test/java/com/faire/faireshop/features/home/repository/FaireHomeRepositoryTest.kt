@@ -12,7 +12,7 @@ import io.reactivex.rxjava3.core.Single
 import org.junit.Before
 import org.junit.Test
 
-class FaireRepositoryTest {
+class FaireHomeRepositoryTest {
 
     private lateinit var repository: FaireHomeRepository
 

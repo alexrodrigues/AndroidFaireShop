@@ -27,6 +27,7 @@ class FaireHomeViewModel @Inject constructor(
         fetchHome()
     }
 
+
     private fun fetchHome() {
         compositeDisposable.add(
             faireHomeUseCase()

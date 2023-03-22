@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?textAppearanceCaption"
+            android:layout_marginTop="@dimen/faire_spacing_32"
+            android:text="@string/error_title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?textAppearanceBody1"
+            android:layout_marginTop="@dimen/faire_spacing_16"
+            android:gravity="center_horizontal"
+            android:text="@string/error_description"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btErrorRetry"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/error_view_button_height"
+            android:text="@string/error_view_try_again"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="@dimen/faire_spacing_16"
+            android:layout_marginHorizontal="@dimen/faire_spacing_32"
+            android:layout_marginBottom="@dimen/faire_spacing_16" />
+
+    </LinearLayout>
+</layout>

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="home_image">Home Image</string>
+    <string name="error_title">Ooops!</string>
+    <string name="error_description">Could not fetch information\nPlease try again</string>
+    <string name="error_view_try_again">Try again</string>
 </resources>

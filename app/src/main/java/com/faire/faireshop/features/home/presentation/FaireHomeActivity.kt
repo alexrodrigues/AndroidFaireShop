@@ -29,6 +29,10 @@ class FaireHomeActivity : AppCompatActivity() {
         }
 
         setupObservers()
+
+        binding.faireErrorView.retryClickListener = {
+            viewModel.retry()
+        }
     }
 
     private fun setupObservers() {
@@ -37,16 +41,20 @@ class FaireHomeActivity : AppCompatActivity() {
                 is FaireHomeViewState.Loading -> {
                     binding.pbFaireHome.visibility = View.VISIBLE
                     binding.faireProductList.visibility = View.GONE
+                    binding.faireErrorView.visibility = View.GONE
                 }
 
                 is FaireHomeViewState.HomeLoaded -> {
                     binding.pbFaireHome.visibility = View.GONE
                     binding.faireProductList.bind(state.vos)
                     binding.faireProductList.visibility = View.VISIBLE
+                    binding.faireErrorView.visibility = View.GONE
                 }
 
                 is FaireHomeViewState.PresentError -> {
-
+                    binding.pbFaireHome.visibility = View.GONE
+                    binding.faireProductList.visibility = View.GONE
+                    binding.faireErrorView.visibility = View.VISIBLE
                 }
             }
         }

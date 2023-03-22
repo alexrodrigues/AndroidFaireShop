@@ -50,4 +50,8 @@ class FaireHomeViewModel @Inject constructor(
         super.onCleared()
     }
 
+    fun retry() {
+        fetchHome()
+    }
+
 }

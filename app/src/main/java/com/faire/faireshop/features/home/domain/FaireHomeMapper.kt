@@ -16,7 +16,7 @@ class FaireHomeMapperImpl: FaireHomeMapper {
             detailsText = response.detailsText.orEmpty(),
             productImage = response.productImage,
             productName = response.productName.orEmpty(),
-            wholesalePriceFormatted = with(DecimalFormat("'\$'#,###.##")) {
+            wholesalePriceFormatted = with(DecimalFormat("'\$'#,##0.00")) {
                 format(response.wholesalePrice?.price)
             }
         )

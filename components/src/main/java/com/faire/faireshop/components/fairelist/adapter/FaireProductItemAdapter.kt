@@ -14,7 +14,7 @@ class FaireProductItemAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FaireHomeViewHolder =
         FaireHomeViewHolder(
-            CellFaireProductItemBinding.inflate(LayoutInflater.from(parent.context))
+            CellFaireProductItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
 
     override fun getItemCount(): Int = vos.size
@@ -29,6 +29,8 @@ class FaireProductItemAdapter(
 
         fun bind(vo: FaireProductItemVO) {
             view.tvProductName.text = vo.productName
+            view.tvProductDescription.text = vo.productDescription
+            view.tvProductPrice.text = vo.wholesalePrice
             vo.productImage?.let {
                 Picasso.get().load(it).into(view.ivFaireHome)
             }

@@ -12,6 +12,7 @@ class FaireHomeUiMapperImpl: FaireHomeUiMapper {
     override fun transform(model: FaireHome): FaireProductItemVO =
         FaireProductItemVO(
             productName = model.productName,
+            productDescription = model.detailsText,
             productImage = model.productImage,
             wholesalePrice = model.wholesalePriceFormatted.orEmpty()
         )

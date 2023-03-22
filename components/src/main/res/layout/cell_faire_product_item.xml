@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/cell_home_height"
+        android:paddingTop="@dimen/faire_spacing_8"
+        android:paddingBottom="@dimen/faire_spacing_8">
 
         <ImageView
             android:id="@+id/ivFaireHome"
@@ -20,9 +23,34 @@
             android:id="@+id/tvProductName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/faire_spacing_16"
+            android:lines="1"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="@dimen/faire_spacing_16"
+            app:layout_constraintEnd_toStartOf="@id/tvProductPrice"
             app:layout_constraintStart_toEndOf="@id/ivFaireHome"
             app:layout_constraintTop_toTopOf="@id/ivFaireHome" />
+
+        <TextView
+            android:id="@+id/tvProductDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/faire_spacing_16"
+            android:layout_marginBottom="@dimen/faire_spacing_8"
+            app:layout_constraintEnd_toStartOf="@id/tvProductPrice"
+            app:layout_constraintStart_toEndOf="@id/ivFaireHome"
+            app:layout_constraintTop_toBottomOf="@id/tvProductName" />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/faire_spacing_8"
+            android:layout_marginTop="@dimen/faire_spacing_8"
+            android:layout_marginEnd="@dimen/faire_spacing_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="$ 5.50" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

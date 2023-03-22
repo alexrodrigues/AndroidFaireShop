@@ -32,11 +32,15 @@ class FaireHomeViewModel @Inject constructor(
             faireHomeUseCase()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe {
+                    stateLiveData.value = FaireHomeViewState.Loading
+                }
                 .subscribe({ list ->
                     val vos = list.map { uiMapper.transform(it) }
                     stateLiveData.value = FaireHomeViewState.HomeLoaded(vos)
                 }, {
                     it.printStackTrace()
+                    stateLiveData.value = FaireHomeViewState.PresentError
                 })
         )
     }
